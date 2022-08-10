@@ -25,9 +25,8 @@ import java.util.Set;
 
 }
 )
-@EntityListeners(AuditingEntityListener.class)//
 @Entity
-public class Article { // h2 hiderate기준으로 엔터티로 설정되면 생성자를 필요로 한다.
+public class Article extends AuditingFields{ // h2 hiderate기준으로 엔터티로 설정되면 생성자를 필요로 한다.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -41,20 +40,12 @@ public class Article { // h2 hiderate기준으로 엔터티로 설정되면 생�
     @OrderBy("id")
     @OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
     private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
+
     //현재 tostring이 출력을 위해서 Articlecomment에서 조회중에 Article 항목으로 들어가고 그 항목에서 이 Set<ArticleComment>로 가고 거기서 또
     //Article을 참조하면서 순환 참조가 일어나기 때문에 @ToString에서 제외할 부분으로 이 것을 설정해준 것이다.
 
     ///metadata
     //자동으로 값들을 추가해준다 JPA의 기능
-    @CreatedDate
-    @Column(nullable = false) private LocalDateTime createdAt;
-    @CreatedBy
-    @Column(nullable = false,length=100) private String createdBy;
-    @LastModifiedDate
-    @Column(nullable = false) private LocalDateTime modifiedAt;
-    @LastModifiedBy
-    @Column(nullable = false,length=100) private String modifiedBy;
-
     protected Article(){
 
     }
