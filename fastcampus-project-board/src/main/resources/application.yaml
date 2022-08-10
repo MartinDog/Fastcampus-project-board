@@ -36,10 +36,10 @@ spring:
   config:
     activate:
       on-profile: testdb #testdb? ???? ?? ? ? ??? ???
-  datasource:
-    url: jdbc:h2:mem:board;mode=mysql
-    driverClassName: org.h2.Driver
-  sql:
-    init:
-      mode: always
-  test.database.replace: none #<-이거 없으면 위 설정값을 무시하고 그냥 컴퓨터 기본 설정값을 가지고 실행함.
+#  datasource:
+#    url: jdbc:h2:mem:board;mode=mysql
+#    driverClassName: org.h2.Driver
+#  sql:
+#    init:
+#      mode: always
+#  test.database.replace: none #<-이거 없으면 위 설정값을 무시하고 그냥 컴퓨터 기본 설정값을 가지고 실행함.
