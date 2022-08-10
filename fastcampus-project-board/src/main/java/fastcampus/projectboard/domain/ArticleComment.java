@@ -23,18 +23,22 @@ import java.util.Objects;
 )
 @EntityListeners(AuditingEntityListener.class)//<-Auditing을 사용한다는 표시이다.
 @Entity
-public class ArticleComment {
+public class ArticleComment extends AuditingFields {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     @Setter @Column(nullable = false, length = 500) private String content;
     @Setter @ManyToOne(optional=false) private Article article;
+    //이런 개별적으로 다 쓰는 것은 코드의 중복이 있지만 개별적인 customize가 가능하다. 여기서 중복되는거 막으려면 추출하면된다.
+    //추출의 방법에는 외부에 클래스를 따로 정의하는 방법이 있다.
+//    다른 곳에서
+//    class AAA{
+//
+//    }
+    //를 정의하고 여기에다가
+    //@Embeded AAA aa; 이렇게 해주면 실행할때 aa 대신에 AAA에 들어있는 내용들이 나온다.
 
-    @CreatedDate @Column (nullable=false) private LocalDateTime createdAt;
-    @CreatedBy @Column(nullable=false) private String createdBy;
-    @LastModifiedDate @Column(nullable=false) private LocalDateTime modifiedAt;
-    @LastModifiedBy @Column(nullable=false) private String modifiedBy;
     protected ArticleComment(){}
     public ArticleComment(String content, Article article) {
         this.content = content;
