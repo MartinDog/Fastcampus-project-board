@@ -40,7 +40,8 @@ public class Article { // h2 hiderate기준으로 엔터티로 설정되면 생�
     @ToString.Exclude
     @OrderBy("id")
     @OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
-    private final Set<ArticleComment> articleComments = new LinkedHashSet<>();//현재 tostring이 출력을 위해서 Articlecomment에서 조회중에 Article 항목으로 들어가고 그 항목에서 이 Set<ArticleComment>로 가고 거기서 또
+    private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
+    //현재 tostring이 출력을 위해서 Articlecomment에서 조회중에 Article 항목으로 들어가고 그 항목에서 이 Set<ArticleComment>로 가고 거기서 또
     //Article을 참조하면서 순환 참조가 일어나기 때문에 @ToString에서 제외할 부분으로 이 것을 설정해준 것이다.
 
     ///metadata
