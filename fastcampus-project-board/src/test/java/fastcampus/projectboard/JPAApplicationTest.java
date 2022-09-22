@@ -3,6 +3,7 @@ package fastcampus.projectboard;
 import fastcampus.projectboard.domain.Article;
 import fastcampus.projectboard.repository.ArticleCommentRepository;
 import fastcampus.projectboard.repository.ArticleRepository;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.Import;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
+@Disabled
 @DisplayName("JPA 연결 테스트")
 @Import(JpaConfig.class)//해당 클래스를 사용한다.
 @DataJpaTest
