@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Import;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
-@Disabled
+@Disabled("스프링 데이터 레스트 통합테스트는 불필요함")
 @DisplayName("JPA 연결 테스트")
 @Import(JpaConfig.class)//해당 클래스를 사용한다.
 @DataJpaTest
