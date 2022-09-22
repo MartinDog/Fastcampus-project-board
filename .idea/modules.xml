@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Fastcampus-project-board.iml" filepath="$PROJECT_DIR$/.idea/Fastcampus-project-board.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project-board.iml" filepath="$PROJECT_DIR$/.idea/modules/project-board.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project-board.main.iml" filepath="$PROJECT_DIR$/.idea/modules/project-board.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/project-board.test.iml" filepath="$PROJECT_DIR$/.idea/modules/project-board.test.iml" />
     </modules>
   </component>
 </project>
